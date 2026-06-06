@@ -1,0 +1,24 @@
+{
+	"name": "warrior866",
+	"private": true,
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"dev-host": "astro dev --host",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "0.9.8",
+		"@astrojs/starlight": "^0.34.0",
+		"astro": "^5.13.0",
+		"starlight-links-validator": "^0.12.4",
+		"starlight-package-managers": "^0.7.0",
+		"starlight-site-graph": "^0.5.0",
+		"starlight-theme-obsidian": "^0.4.1",
+		"typescript": "^5.9.3"
+	}
+}
