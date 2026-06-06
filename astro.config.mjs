@@ -15,7 +15,7 @@ export default defineConfig({
             },
             redirectToDefaultLocale: true,
             description: 'Writeups de HackTheBox, Challenges y OffSec',
-            credits: true,
+            credits: false,
             // 🌐 Configuración bilingüe
             defaultLocale: 'es',
             locales: {
@@ -32,9 +32,7 @@ export default defineConfig({
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/jafernandezm/warrior866' },
                 { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jhon-fer/' },
             ],
-            editLink: {
-                baseUrl: 'https://github.com/jafernandezm/warrior866/edit/main/',
-            },
+            
             customCss: [
                 './src/styles/global.css'
             ],
@@ -44,7 +42,11 @@ export default defineConfig({
                     errorOnRelativeLinks: false,
                 }),
                 
-                starlightThemeObsidian({ overrideWarnings: true }),
+                starlightThemeObsidian({ 
+                     overrideWarnings: true,
+                     graphConfig: false,
+                     pageGraphConfig: { visible: false },
+                 }),
             ],
             favicon: './favicon.svg',
             sidebar: [
