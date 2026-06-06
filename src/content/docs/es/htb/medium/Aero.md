@@ -1,5 +1,5 @@
 ---
-title: Aero - HackTheBox
+title: Aero
 ---
 
 ## 1. Reconocimiento

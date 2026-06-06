@@ -1,6 +1,6 @@
 
 ---
-title: Administrator - HackTheBox
+title: Administrator
 ---
 
 ## 1. Reconocimiento

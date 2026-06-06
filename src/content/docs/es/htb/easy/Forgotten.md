@@ -1,5 +1,5 @@
 ---
-title: Forgotten - HackTheBox
+title: Forgotten
 description: Writeup de la máquina Forgotten de HackTheBox. LimeSurvey RCE + Docker volume privesc.
 tags: [htb, linux, easy, web, docker, cve-2021-44967, limesurvey]
 ---
