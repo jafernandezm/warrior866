@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-
 import starlightThemeObsidian from 'starlight-theme-obsidian';
 import starlightLinksValidator from 'starlight-links-validator';
 
@@ -16,39 +15,25 @@ export default defineConfig({
             redirectToDefaultLocale: true,
             description: 'Writeups de HackTheBox, Challenges y OffSec',
             credits: false,
-            // 🌐 Configuración bilingüe
             defaultLocale: 'es',
             locales: {
-                es: {
-                    label: 'Español',
-                    lang: 'es',
-                },
-                en: {
-                    label: 'English',
-                    lang: 'en',
-                },
+                es: { label: 'Español', lang: 'es' },
+                en: { label: 'English', lang: 'en' },
             },
             social: [
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/jafernandezm/warrior866' },
                 { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jhon-fer/' },
             ],
-            editLink: {
-                baseUrl: 'https://github.com/jafernandezm/warrior866/edit/main/',
-            },
-            customCss: [
-                './src/styles/global.css'
-            ],
+            customCss: ['./src/styles/global.css'],
             plugins: [
                 starlightLinksValidator({
                     errorOnInvalidHashes: false,
                     errorOnRelativeLinks: false,
                 }),
-                
-                starlightThemeObsidian({ 
-                     overrideWarnings: true,
-                     graphConfig: false,
-                     pageGraphConfig: { visible: false },
-                 }),
+                starlightThemeObsidian({
+                    overrideWarnings: true,
+                    graphConfig: { visibilityRules: [] },
+                }),
             ],
             favicon: './favicon.svg',
             sidebar: [
