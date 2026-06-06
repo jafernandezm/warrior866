@@ -12,7 +12,6 @@ export default defineConfig({
                 es: 'Warrior866 - Writeups',
                 en: 'Warrior866 - Writeups',
             },
-            redirectToDefaultLocale: true,
             description: 'Writeups de HackTheBox, Challenges y OffSec',
             credits: false,
             defaultLocale: 'es',
