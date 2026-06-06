@@ -32,7 +32,9 @@ export default defineConfig({
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/jafernandezm/warrior866' },
                 { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jhon-fer/' },
             ],
-            
+            editLink: {
+                baseUrl: 'https://github.com/jafernandezm/warrior866/edit/main/',
+            },
             customCss: [
                 './src/styles/global.css'
             ],
