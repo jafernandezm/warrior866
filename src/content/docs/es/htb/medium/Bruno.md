@@ -1,6 +1,6 @@
 ---
 title: Bruno
-description: test
+description: Bruno
 tags: [HTB]
 ---
 ## 1. Reconocimiento
