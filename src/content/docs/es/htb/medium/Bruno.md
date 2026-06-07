@@ -1,7 +1,21 @@
 ---
 title: Bruno
 description: Bruno
-tags: [HTB]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - windows
+  - medium
+  - active-directory
+  - asrep-roasting
+  - zip-path-traversal
+  - dll-hijacking
+  - krbrelayup
+  - rbcd
+  - ftp-anonymous
 ---
 ## 1. Reconocimiento
 

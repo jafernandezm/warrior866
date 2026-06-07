@@ -1,7 +1,22 @@
 ---
 title: Garfield
 description: Garfield
-tags: [HTB]
+sidebar:
+  badge:
+    text: Hard
+    variant: success
+tags:
+  - htb
+  - windows
+  - hard
+  - active-directory
+  - sysvol-abuse
+  - rbcd
+  - rodc
+  - golden-ticket
+  - keylist-attack
+  - chisel
+  - pass-the-hash
 ---
 
 ## 1. Reconocimiento

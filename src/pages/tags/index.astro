@@ -1,0 +1,124 @@
+---
+// src/pages/tags/index.astro
+import { getCollection } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const docs = await getCollection('docs');
+
+const tagCounts = new Map<string, { displayTag: string; count: number }>();
+let docsWithTags = 0;
+
+for (const doc of docs) {
+  const tags = ((doc.data as any).tags ?? []) as string[];
+  if (tags.length > 0) docsWithTags++;
+  for (const tag of tags) {
+    const slug = tag.toLowerCase().trim().replace(/\s+/g, '-');
+    const existing = tagCounts.get(slug);
+    if (existing) {
+      existing.count++;
+    } else {
+      tagCounts.set(slug, { displayTag: tag, count: 1 });
+    }
+  }
+}
+
+const sortedTags = Array.from(tagCounts.entries())
+  .map(([slug, data]) => ({ slug, ...data }))
+  .sort((a, b) => b.count - a.count || a.displayTag.localeCompare(b.displayTag));
+
+const hasTags = sortedTags.length > 0;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Tags',
+    description: 'Explora los writeups por categorías y técnicas',
+    template: 'splash',
+    tableOfContents: false,
+  }}
+>
+  {hasTags ? (
+    <>
+      <p class="intro">
+        <strong>{sortedTags.length}</strong> tags en total a lo largo de <strong>{docsWithTags}</strong> writeup{docsWithTags === 1 ? '' : 's'} (de {docs.length} totales).
+      </p>
+
+      <div class="tag-cloud">
+        {sortedTags.map((t) => (
+          <a
+            href={`${BASE}/tags/${t.slug}/`}
+            class="tag-pill"
+            style={`--size: ${Math.min(1.6, 0.85 + t.count * 0.1)}rem;`}
+          >
+            #{t.displayTag}
+            <span class="tag-count">{t.count}</span>
+          </a>
+        ))}
+      </div>
+    </>
+  ) : (
+    <div class="diagnostic">
+      <h2>⚠️ No se encontraron tags</h2>
+      <p>Se cargaron <strong>{docs.length}</strong> documentos pero ninguno tiene tags.</p>
+      <p>Añade <code>tags:</code> al frontmatter de algún writeup (sin <code>{`{/* */}`}</code>) y reinicia el dev server.</p>
+    </div>
+  )}
+</StarlightPage>
+
+<style>
+  .intro {
+    color: var(--sl-color-gray-2);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .intro strong { color: var(--sl-color-accent-high); }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-text-accent);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: var(--sl-font-system-mono);
+    font-size: var(--size, 1rem);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .tag-pill:hover {
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-accent-high);
+    border-color: var(--sl-color-accent);
+    transform: translateY(-2px);
+  }
+  .tag-count {
+    background: var(--sl-color-black);
+    color: var(--sl-color-gray-2);
+    font-size: 0.7em;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    min-width: 1.5em;
+    text-align: center;
+  }
+
+  .diagnostic {
+    background: #4d3e1a;
+    border: 1px solid #facc15;
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #fef3c7;
+  }
+  .diagnostic h2 { color: #facc15; margin-top: 0; }
+  .diagnostic code { color: var(--sl-color-accent-high); }
+</style>

@@ -5,10 +5,7 @@ sidebar:
   badge:
     text: Medium
     variant: caution
----
-
-{/*
-Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si quieres usarlos):
+tags:
   - htb
   - linux
   - medium
@@ -19,7 +16,9 @@ Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si
   - script-injection
   - process-hijack
   - suid-bash
-*/}
+---
+
+
 
 # 🐧 Bamboo
 

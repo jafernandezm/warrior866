@@ -1,7 +1,20 @@
 ---
 title: Craft
 description: Craft
-tags: [HTB]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - linux
+  - medium
+  - eval-injection
+  - docker-escape
+  - gogs
+  - hardcoded-credentials
+  - hashicorp-vault
+  - ssh-private-key
 ---
 
 ## 1. Reconocimiento

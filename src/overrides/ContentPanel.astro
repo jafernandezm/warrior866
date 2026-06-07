@@ -1,0 +1,24 @@
+---
+// src/overrides/ContentPanel.astro
+import Default from '@astrojs/starlight/components/ContentPanel.astro';
+import Tags from '../components/Tags.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const tags = entry.data.tags as string[] | undefined;
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+{tags && tags.length > 0 && (
+  <div class="sl-container">
+    <Tags tags={tags} />
+  </div>
+)}
+
+<style>
+  .sl-container {
+    max-width: var(--sl-content-width);
+    margin-inline: auto;
+    padding-inline: var(--sl-content-pad-x);
+  }
+</style>

@@ -1,7 +1,20 @@
 ---
 title: Forgotten
 description: Forgotten
-tags: [HTB]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - linux
+  - medium
+  - cve-2021-44967
+  - limesurvey
+  - default-credentials
+  - docker-escape
+  - suid
+  - docker-volume
 ---
 ## 1. Reconocimiento
 

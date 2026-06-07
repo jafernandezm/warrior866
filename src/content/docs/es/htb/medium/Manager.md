@@ -1,7 +1,21 @@
 ---
 title: Manager
 description: Manager
-tags: [HTB]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - windows
+  - medium
+  - active-directory
+  - mssql
+  - xp-dirtree
+  - password-spray
+  - adcs
+  - esc7
+  - pass-the-hash
 ---
 ## 1. Reconocimiento
 

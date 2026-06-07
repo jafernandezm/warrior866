@@ -1,7 +1,19 @@
 ---
 title: Forgotten
 description: Writeup de la máquina Forgotten de HackTheBox. LimeSurvey RCE + Docker volume privesc.
-tags: [htb, linux, easy, web, docker, cve-2021-44967, limesurvey]
+sidebar:
+  badge:
+    text: Easy
+    variant: success
+tags:
+  - htb
+  - linux
+  - easy
+  - cve-2021-44967
+  - limesurvey
+  - default-credentials
+  - docker-escape
+  - suid
 ---
 
 | Campo | Valor |

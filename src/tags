@@ -1,0 +1,39 @@
+# 🏷️ Master Tag List
+
+## Plataforma / OS
+`htb` `windows` `linux`
+
+## Dificultad
+`easy` `medium` `hard`
+
+## Active Directory
+`active-directory` `kerberoasting` `asrep-roasting` `targeted-kerberoasting`
+`dcsync` `pass-the-hash` `bloodhound` `acl-abuse` `genericall` `genericwrite`
+`rbcd` `rodc` `golden-ticket` `keylist-attack` `sysvol` `sysvol-abuse`
+`unconstrained-delegation` `petitpotam` `dns-poisoning`
+
+## ADCS
+`adcs` `esc7`
+
+## MSSQL
+`mssql` `xp-dirtree` `linked-server`
+
+## Web / Exploits
+`cve-2021-44967` `cve-2022-46364` `cve-2023-28252` `cve-2023-38146` `cve-2025-54123`
+`eval-injection` `ssrf` `lfi` `soap-injection` `file-upload` `dll-hijacking`
+`command-injection` `chrome-extension` `themebleed` `limesurvey` `hoverfly` `soap` `gogs`
+
+## Escalada de privilegios
+`sudo-abuse` `suid` `pycache-poisoning` `kernel-exploit`
+`docker-escape` `docker-volume` `sebackupprivilege`
+
+## Credenciales / Reconocimiento
+`default-credentials` `credential-exposure` `hardcoded-credentials`
+`password-spray` `password-safe` `ftp` `ftp-anonymous` `responder`
+
+## Red / Tunneling
+`chisel`
+
+## Otras técnicas
+`zip-path-traversal` `krbrelayup` `ssh-private-key`
+`hashicorp-vault` `ntds-dump` `vss-shadow-copy` `ldap-anonymous`

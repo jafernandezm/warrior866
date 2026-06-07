@@ -1,6 +1,25 @@
-
 ---
 title: Administrator
+
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - windows
+  - medium
+  - active-directory
+  - acl-abuse
+  - genericall
+  - genericwrite
+  - kerberoasting
+  - targeted-kerberoasting
+  - bloodhound
+  - dcsync
+  - pass-the-hash
+  - password-safe
+  - ftp
 ---
 
 ## 1. Reconocimiento

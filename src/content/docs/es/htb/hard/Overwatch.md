@@ -1,7 +1,17 @@
 ---
 title: Overwatch
 description: Overwatch
-tags: [HTB]
+tags:
+  - htb
+  - windows
+  - medium
+  - active-directory
+  - mssql
+  - linked-server
+  - dns-poisoning
+  - responder
+  - soap-injection
+  - credential-exposure
 ---
 ## 1. Reconocimiento
 

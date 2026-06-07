@@ -122,6 +122,7 @@ export default defineConfig({
             ],
             components: {
                 Head: './src/overrides/Head.astro',
+                ContentPanel: './src/overrides/ContentPanel.astro',
             },
         }),
     ],

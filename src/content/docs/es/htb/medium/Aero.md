@@ -1,5 +1,20 @@
 ---
 title: Aero
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - windows
+  - medium
+  - cve-2023-38146
+  - themebleed
+  - cve-2023-28252
+  - clfs-eop
+  - file-upload
+  - dll-hijacking
+  - kernel-exploit
 ---
 
 ## 1. Reconocimiento

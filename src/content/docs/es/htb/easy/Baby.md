@@ -5,11 +5,8 @@ sidebar:
   badge:
     text: Easy
     variant: success
----
-
-{/*
-Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si quieres usarlos):
-  - vulnlab
+tags:
+  - htb
   - windows
   - easy
   - active-directory
@@ -18,7 +15,7 @@ Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si
   - ntds-dump
   - vss-shadow-copy
   - pass-the-hash
-*/}
+---
 
 # 🖥️ Baby
 

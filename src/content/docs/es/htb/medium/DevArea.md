@@ -1,7 +1,22 @@
 ---
 title: DevArea
 description: DevArea
-tags: [HTB]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - linux
+  - medium
+  - cve-2022-46364
+  - cve-2025-54123
+  - ssrf
+  - lfi
+  - soap
+  - hoverfly
+  - suid
+  - sudo-abuse
 ---
 
 ## 1. Reconocimiento

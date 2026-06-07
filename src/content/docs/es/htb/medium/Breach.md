@@ -5,11 +5,8 @@ sidebar:
   badge:
     text: Medium
     variant: caution
----
-
-{/*
-Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si quieres usarlos):
-  - vulnlab
+tags:
+  - htb
   - windows
   - medium
   - active-directory
@@ -22,7 +19,7 @@ Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si
   - xp-cmdshell
   - godpotato
   - seimpersonateprivilege
-*/}
+---
 
 # 🖥️ Breach
 

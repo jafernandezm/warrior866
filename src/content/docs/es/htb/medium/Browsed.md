@@ -1,7 +1,19 @@
 ---
 title: Browsed
 description: Browsed
-tags: [HTB, ]
+sidebar:
+  badge:
+    text: Medium
+    variant: caution
+tags:
+  - htb
+  - linux
+  - medium
+  - chrome-extension
+  - command-injection
+  - ssrf
+  - pycache-poisoning
+  - sudo-abuse
 ---
 ## 1. Reconocimiento
 

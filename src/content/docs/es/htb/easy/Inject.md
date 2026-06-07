@@ -5,10 +5,7 @@ sidebar:
   badge:
     text: Easy
     variant: success
----
-
-{/*
-Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si quieres usarlos):
+tags:
   - htb
   - linux
   - easy
@@ -18,7 +15,7 @@ Tags sugeridos (descomenta y añade `tags` al schema en src/content.config.ts si
   - spel-injection
   - ansible-injection
   - maven-credentials
-*/}
+---
 
 # 🐧 Inject
 
