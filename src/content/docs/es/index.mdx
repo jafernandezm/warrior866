@@ -1,0 +1,162 @@
+---
+title: Warrior866 - Writeups
+description: Mis writeups de HackTheBox, Challenges y OffSec
+---
+
+import { getCollection } from 'astro:content';
+
+export const all = await getCollection('docs');
+export const htb = all.filter(e => e.id.startsWith('es/htb/'));
+export const byDiff = (d) => htb.filter(e => e.id.startsWith(`es/htb/${d}/`));
+
+export const diffMeta = {
+  'starting-point': { label: 'Starting Point', color: '#9ca3af', emoji: '🚀' },
+  'easy':           { label: 'Easy',           color: '#22c55e', emoji: '🟢' },
+  'medium':         { label: 'Medium',         color: '#eab308', emoji: '🟡' },
+  'hard':           { label: 'Hard',           color: '#ef4444', emoji: '🔴' },
+  'insane':         { label: 'Insane',         color: '#a855f7', emoji: '⚫' },
+};
+
+export const prettyName = (it) =>
+  it.data.title ?? it.id.split('/').pop().replace(/\.md$/, '');
+
+export const linkFor = (it) =>
+  `/warrior866/${it.id.replace(/\.md$/, '').toLowerCase()}/`;
+
+<style>{`
+  .hero {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(99,102,241,.18), rgba(168,85,247,.12), rgba(34,197,94,.10));
+    border: 1px solid var(--sl-color-gray-5);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .hero h1 {
+    margin: 0 0 .5rem;
+    font-size: 2.2rem;
+    background: linear-gradient(90deg,#a78bfa,#22d3ee,#22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p { margin: 0; color: var(--sl-color-gray-2); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: .75rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .stat {
+    padding: 1rem;
+    border-radius: .75rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    text-align: center;
+  }
+  .stat .num { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+  .stat .lbl { font-size: .8rem; color: var(--sl-color-gray-3); margin-top: .25rem; }
+
+  .diff-section { margin: 2rem 0; }
+  .diff-head {
+    display: flex; align-items: center; gap: .6rem;
+    margin: 0 0 1rem; padding-bottom: .5rem;
+    border-bottom: 2px solid var(--diff-c);
+  }
+  .diff-head h3 { margin: 0; font-size: 1.3rem; }
+  .diff-badge {
+    display: inline-flex; align-items: center; gap: .35rem;
+    padding: .2rem .7rem; border-radius: 999px;
+    background: color-mix(in srgb, var(--diff-c) 18%, transparent);
+    color: var(--diff-c);
+    font-size: .8rem; font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--diff-c) 40%, transparent);
+  }
+  .diff-count {
+    margin-left: auto;
+    font-size: .85rem; color: var(--sl-color-gray-3);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: .85rem;
+  }
+  .card {
+    display: block;
+    padding: 1rem 1.1rem;
+    border-radius: .75rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-left: 4px solid var(--diff-c);
+    text-decoration: none !important;
+    color: var(--sl-color-white);
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    background: var(--sl-color-gray-5);
+    border-color: var(--diff-c);
+  }
+  .card .name { font-weight: 600; font-size: 1rem; }
+  .card .meta { font-size: .75rem; color: var(--sl-color-gray-3); margin-top: .25rem; }
+
+  .empty {
+    padding: 1rem; border-radius: .5rem;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-gray-3);
+    font-style: italic; font-size: .9rem;
+  }
+`}</style>
+
+<div class="hero">
+  <h1>🛡️ Warrior866</h1>
+  <p>Mis writeups de HackTheBox, Challenges y OffSec — todo en un solo sitio.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">{htb.length}</div><div class="lbl">Máquinas HTB</div></div>
+  <div class="stat"><div class="num">{byDiff('easy').length}</div><div class="lbl">Easy</div></div>
+  <div class="stat"><div class="num">{byDiff('medium').length}</div><div class="lbl">Medium</div></div>
+  <div class="stat"><div class="num">{byDiff('hard').length}</div><div class="lbl">Hard</div></div>
+  <div class="stat"><div class="num">{byDiff('insane').length}</div><div class="lbl">Insane</div></div>
+</div>
+
+## 📦 HackTheBox
+
+{['starting-point','easy','medium','hard','insane'].map(diff => {
+  const items = byDiff(diff);
+  const meta = diffMeta[diff];
+  return (
+    <div class="diff-section" style={`--diff-c:${meta.color}`} key={diff}>
+      <div class="diff-head">
+        <span class="diff-badge">{meta.emoji} {meta.label}</span>
+        <span class="diff-count">{items.length} {items.length === 1 ? 'máquina' : 'máquinas'}</span>
+      </div>
+      {items.length === 0 ? (
+        <div class="empty">Aún no hay writeups en esta categoría. Próximamente…</div>
+      ) : (
+        <div class="cards">
+          {items.map(it => (
+            <a class="card" href={linkFor(it)} key={it.id} style={`--diff-c:${meta.color}`}>
+              <div class="name">{prettyName(it)}</div>
+              <div class="meta">{meta.label} · HTB</div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+})}
+
+## 🎓 Otros recursos
+
+- 🎯 [Certificaciones](/warrior866/es/certificaciones/)
+- 🚩 [Challenges](/warrior866/es/challenges/crypto/) (crypto, forensics, pwn, reversing, web, misc)
+- 📚 [OffSec / PEN-200 / OSCP](/warrior866/es/offsec/oscp/)
+- 👤 [Sobre mí](/warrior866/es/sobre-mi/)
+
+## ⚠️ Disclaimer
+
+Solo publico writeups de máquinas **retiradas** de HTB y técnicas generales de OffSec, respetando los términos de servicio de cada plataforma.
