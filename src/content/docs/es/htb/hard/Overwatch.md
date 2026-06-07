@@ -1,6 +1,10 @@
 ---
 title: Overwatch
 description: Overwatch
+sidebar:
+  badge:
+    text: Hard
+    variant: danger
 tags:
   - htb
   - windows

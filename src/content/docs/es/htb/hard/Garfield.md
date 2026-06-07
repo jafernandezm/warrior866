@@ -4,7 +4,7 @@ description: Garfield
 sidebar:
   badge:
     text: Hard
-    variant: success
+    variant: danger
 tags:
   - htb
   - windows

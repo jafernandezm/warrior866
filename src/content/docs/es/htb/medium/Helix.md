@@ -183,7 +183,7 @@ Last login: Fri May 15 15:00:37 2026 from 10.10.17.16
 operator@helix:~$ ls
 'control systems diagram.png'  'Operator Control & Safety Guide.pdf'   user.txt
 operator@helix:~$ cat user.txt
-a1ae157140a3de15ae878d8b033f6f64
+[user flag]
 ```
 📸 *Captura: shell SSH como `operator` con lectura de `user.txt`.*
 
@@ -251,7 +251,7 @@ operator@helix:~$ sudo /usr/local/sbin/helix-maint-console
 root@helix:/home/operator# id
 uid=0(root) gid=0(root) groups=0(root)
 root@helix:/home/operator# cat /root/root.txt
-a85165e440b7c965a081c753b470aeb0
+[root flag]
 ```
 📸 *Captura: shell root con lectura de `root.txt`.*
 
@@ -260,8 +260,8 @@ a85165e440b7c965a081c753b470aeb0
 ## 🏁 Flags
 | Flag | Hash |
 |------|------|
-| user.txt | `a1ae157140a3de15ae878d8b033f6f64` |
-| root.txt | `a85165e440b7c965a081c753b470aeb0` |
+| user.txt | `[user flag]` |
+| root.txt | `[root flag]` |
 ---
 ## 🎓 Lecciones Aprendidas
 - **Apache NiFi con acceso anónimo y `canWrite=True` es RCE inmediato.** Cualquier instancia de NiFi expuesta debe exigir autenticación (LDAP/Kerberos/cert) y limitar permisos. CVE-2023-34468 está parcheada desde 1.22.0 — actualizar es obligatorio.

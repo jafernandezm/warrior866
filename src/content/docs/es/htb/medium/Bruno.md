@@ -314,7 +314,7 @@ C:\> whoami
 nt authority\system
 
 C:\Users\Administrator\Desktop> type root.txt
-0e71aa52b08a386e1a33483ff2e8ced4
+[root flag]
 ```
 
 ---

@@ -199,7 +199,7 @@ cat /root/root.txt
 ```
 
 ```
-74db39f3f5e0d9c4c476ba1e754c3f10
+[root flag]
 ```
 
 ---
@@ -209,7 +209,7 @@ cat /root/root.txt
 | Flag | Valor |
 |------|-------|
 | **user.txt** | obtenida tras SSH como `limesvc` |
-| **root.txt** | `74db39f3f5e0d9c4c476ba1e754c3f10` |
+| **root.txt** | [root flag] |
 
 ---
 

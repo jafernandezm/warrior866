@@ -112,7 +112,7 @@ Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-78-generic x86_64)
 You have mail.
 Last login: Tue Aug  8 11:31:22 2023 from 10.10.14.23
 lnorgaard@keeper:~$ cat user.txt
-287326c76c525a03a57313123bbc0a9e
+[user flag]
 ```
 📸 *Captura: shell SSH como `lnorgaard` con lectura de `user.txt`.*
 
@@ -258,7 +258,7 @@ Last login: Tue Aug  8 19:00:06 2023 from 10.10.14.41
 root@keeper:~# id
 uid=0(root) gid=0(root) groups=0(root)
 root@keeper:~# cat root.txt
-9d02c69ae1d106319b1f9304f34f40d1
+[root flag]
 ```
 📸 *Captura: shell SSH como `root` con lectura de `root.txt`.*
 
@@ -267,8 +267,8 @@ root@keeper:~# cat root.txt
 ## 🏁 Flags
 | Flag | Hash |
 |------|------|
-| user.txt | `287326c76c525a03a57313123bbc0a9e` |
-| root.txt | `9d02c69ae1d106319b1f9304f34f40d1` |
+| user.txt | [user flag] |
+| root.txt | [root flag] |
 ---
 ## 🎓 Lecciones Aprendidas
 - **Credenciales por defecto siempre primero.** Antes de fuzzear directorios, brute-forcear o lanzar exploits, probar las credenciales por defecto del software identificado. RT con `root:password`, Tomcat con `tomcat:s3cret`, Jenkins con anonymous read, etc. Una lista mental de las 20-30 combinaciones más típicas ahorra horas.
